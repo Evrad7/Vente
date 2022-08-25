@@ -1,0 +1,243 @@
+{% extends "achat/base.html"  %}
+{% load static %}
+{% load format_price %}
+
+    {% block header %}
+    <title>Détails</title>
+    <link rel="stylesheet" href="{% static 'achat/css/details.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static  'achat/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static  'achat/css/owl.theme.default.min.css' %}">
+
+    {% endblock %}
+
+
+    {% block content %}
+     {% include "achat/menu.html" with page=1 %}
+
+
+     <div class="bg-light position-relative">
+       <div class="block-info ">
+
+       </div>
+
+        <div class="row  my-5 hidden-tml" >
+          <div class="col-0 col-sm-1 col-md-2 col-lg-3">
+
+          </div>
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6 " style="background:#FFFFFF">
+            <div class="position-relative">
+                  <a href="#" class="link-dark">
+                    <div class="like  border border-danger rounded bg-light px-1 me-4">
+                      <div class="d-flex justify-content-between ">
+                        <i class="bi bi-heart d-block fs-2"></i>
+                        <span class=" d-block mt-2 me-1">{{article.like}}</span>
+                      </div>
+                    </div>
+                  </a>
+
+
+                  <div id="carousel" class="carousel slide m-auto overflow-hidden mt-1" data-bs-ride="carousel" data-bs-interval="false" style="height:300px;">
+                  <div class="carousel-inner " pk_photos="{{types_articles.0.photos.id}}">
+
+                    <div class="carousel-item active " >
+                      <img src="{{types_articles.0.photos.photo1.url}}" class="img-fluid d-block  m-auto" alt="{{article.nom}}">
+                    </div>
+                    <div class="carousel-item  " >
+                      <img src="{{types_articles.0.photos.photo2.url}}" class="img-fluid d-block  m-auto" alt="{{article.nom}}">
+                    </div>
+                    {% if types_articles.0.photos.photo3.url is not None %}
+                    <div class="carousel-item  " >
+                      <img src="{{types_articles.0.photos.photo3.url}}" class="img-fluid d-block  m-auto" alt="{{article.nom}}">
+                    </div>
+                    {% endif %}
+                  </div>
+                  <button class="carousel-control-prev " type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <i class="bi bi-chevron-left text-dark fs-3"></i>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next " type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <i class="bi bi-chevron-right text-dark fs-3"></i>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+               </div>
+
+            </div>
+
+
+         <div class="row mt-3">
+           <div class="col-12 col-sm-6 ms-3 ms-sm-0 mb-3 mb-sm-0 d-flex justify-content-start">
+             <div class="dropdown ">
+                   <h5 class="me-4 fw-bold d-inline">Couleur</h5>
+                    <button class="btn btn-info dropdown-toggle position-relative text-start" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span>{{couleurs_articles.0}}</span> <i class="bi bi-chevron-down ms-2"></i>
+                    </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                {% for couleur_article in couleurs_articles %}
+                  <li><button class="dropdown-item" type="button">{{couleur_article}}</button></li>
+                {% endfor %}
+                </ul>
+             </div>
+             <div class="d-flex justify-content-center align-items-center ms-1 opacity-0" id="load-ajax">
+               <div class="spinner-border text-warning me-3" role="status">
+                   <span class="visually-hidden">Loading...</span>
+              </div>
+             </div>
+
+           </div>
+           <div class="col-12 col-sm-6 ms-3 ms-sm-0">
+             <div class="d-flex flex-wrap">
+               <h5 class="me-0 fw-bold d-inline">Tailles</h5>
+               <ul class="d-flex flex-wrap ps-1 me-5 ps-sm-3 tailles" style="list-style-type:none;">
+                 {% for type_article in types_articles %}
+                 <div class="position-relative">
+                   <li class="me-1 mt-sm-4  mt-0 border rounded border-info  px-1   {% if forloop.first %}active{% endif %}" pk_photos="{{type_article.photos.pk}}">
+                         {{type_article.taille}}
+                     </li>
+                    <div class="" >
+                      {% if type_article.quantite_disponible == 0 %}
+                       <span class="text-dark px-3">0 restant:<a href="#" style="" class="link-dark  "><br> me prevenir quand disponible</a></span>
+                      {% else %}
+                        <span class="text-dark px-3">{{type_article.quantite_disponible}} restants</span>
+                      {% endif %}
+                     </div>
+                 </div>
+
+                 {% endfor %}
+
+               </ul>
+             </div>
+           </div>
+
+         </div>
+          </div>
+
+          <div class="col-0 col-sm-1 col-md-2 col-lg-3">
+
+          </div>
+
+
+
+
+        </div>
+
+        <div class="row mb-5 mx-sm-5 mx-1 ">
+          <div class="col-12 col-lg-5 ">
+            <div class="d-sm-flex mb-1">
+              <span class="fw-bold me-3 hidden-tml">Prix</span>
+              <div class="">
+                <div class=" bg-warning   rounded-2  hidden-tml px-1 text-center" style="height:30px; max-width:250px;">
+                     <span class="">{{article.prix|floatformat:-3|formatprice}} XAF</span>
+                </div>
+                <div class="hidden-tml">
+                  <span  class="">-{{article.reduction}}%</span>
+                  <span class="text-muted text-decoration-line-through">{{article_prix_non_reduit|floatformat:-3|formatprice}} XAF</span>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="d-sm- mb-1 hidden-tml">
+              <span class=" me-3">Nom du produit: </span>
+              <span class="text-danger fw-bold">{{article.nom}}</span>
+            </div>
+            <div class="d-sm-flex mb-1 hidden-tml">
+              <span class=" me-3">Origine: </span>
+              <span class="text-danger fw-bold">{{article.origine}}</span>
+            </div>
+            <div class=" text-center mb-4 hidden-tml">
+              <a type="button" id="ajout-panier" href="#" class="btn btn-info rounded me-sm-3  mt-2">Ajouter  au  panier   </a>
+              <a type="button" href="#" class="btn btn-info rounded  mt-2">Acheter maintenant</a>
+            </div>
+
+            <div class="text-center d-block d-lg-none hidden-tml">
+              <svg xmlns="http://www.w3.org/2000/svg" width="250" height="1" viewBox="0 0 1257 1">
+               <line id="Ligne_7" data-name="Ligne 7" x2="1257" transform="translate(0 0.5)" fill="none" stroke="rgba(13,11,11,0.9)" stroke-width="1"/>
+             </svg>
+
+            </div>
+          </div>
+          <div class="col-0 col-lg-2 text-center d-none d-lg-block hidden-tml">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="-1000" viewBox="0 0 90 1143.5">
+             <g id="Groupe_2" data-name="Groupe 2" transform="translate(-589 -284)">
+               <g id="Ellipse_3" data-name="Ellipse 3" transform="translate(589 284)" fill="#e2d9d6" stroke="#707070" stroke-width="1">
+                 <circle cx="45" cy="45" r="45" stroke="none"/>
+                 <circle cx="45" cy="45" r="44.5" fill="none"/>
+               </g>
+               <line id="Ligne_7" data-name="Ligne 7" y2="1053" transform="translate(634.5 374.5)" fill="none" stroke="rgba(13,11,11,0.9)" stroke-width="1"/>
+             </g>
+           </svg>
+
+
+
+          </div>
+          <div class="col-12 col-lg-5 hidden-tml">
+             <div class="mb-1">
+               <span class="fw-bold">Livraison</span>
+               <p>Nous livrons dans toutes les villes du Cameroun. Nous avons toute une politique qui garantie la sécurité dans la livraison</p>
+             </div>
+           <div class="mb-1">
+             <span class="fw-bold"> Mode de payement</span>
+             <ul class="mode-payement text-danger">
+               <li>Mobile Money</li>
+               <li>Orange Money</li>
+               <li>Carte Bancaire</li>
+             </ul>
+           </div>
+           <div class="">
+               <a href="#" class="text-decoration-none ms-5">En savoir plus</a>
+           </div>
+          </div>
+        </div>
+    <div class="container hidden-tml">
+      <h4 class="mb-5">Vous avez penser à tous ?? </h4>
+      {% for articles_ in articles  %}
+        <div class="owl-carousel owl-theme mt-3">
+         {% for article in articles_%}
+         <div class="card position-relative p-0 border border-warning shadow">
+           <div class="content-img">
+             <img src="{{article.photo.url}}" alt="{{article.nom}}" class="card-img-top" width="154px" height="154px">
+           </div>
+
+           <div class="px-1 pb-0 card-body">
+             <p class=" card-title p-0 m-0  text-center">{{article.nom}}</p>
+              <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                   <span class="">{{article.prix|floatformat:-3| formatprice}}XAF</span>
+              </div>
+
+              <div class=" d-flex justify-content-center">
+                <span style="" class=" text-dark fw-bold rounded reduction">-{{article.reduction}}%</span>
+                <span class="text-muted   text-decoration-line-through">{{article.prix_non_reduit|floatformat:-3 |formatprice }} XAF</span>
+              </div>
+               <a href="{{article.get_absolute_url}}" class="stretched-link"></a>
+           </div>
+         </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+
+   <div class="container mb-5">
+     <h4 class="mt-5" >Description de l'article</h4>
+     <p>{{article.description}}</p>
+   </div>
+
+
+
+
+     </div>
+     {% endblock %}
+
+
+
+
+ {% block footer %}
+ {% include "achat/footer.html" %}
+ <script type="text/javascript" src="{% static 'achat/js/details.js' %}"></script>
+ <script src="{% static  'achat/js/owl.carousel.min.js' %}"></script>
+<script src="{% static  'achat/js/jquery-3.6.0.js' %}"></script>
+   <script type="text/javascript" src="{% static 'achat/js/lunch_owl_carousel_details.js'  %}"></script>
+ <script type="text/javascript" src="{% static 'achat/js/details_ajax.js'  %}"> </script>
+
+
+
+ {% endblock %}

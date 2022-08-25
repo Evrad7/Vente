@@ -1,0 +1,148 @@
+{% extends "achat/base.html" %}
+{% load static %}
+{% load format_price %}
+
+
+{% block header %}
+<title>Panier</title>
+<link rel="stylesheet" href="{% static 'achat/css/panier.css' %}" type="text/css">
+
+{% endblock %}
+
+{% block content %}
+
+{% include "achat/menu.html" with page=3 %}
+
+ <div class=" container position-relative " style="margin-top:60px;">
+   {% if  not typesArticlesPanier|length_is:"0"%}
+   <div class="prix-total bg-warning px-1 rounded">
+     <div class="">
+       <span>Prix Total:</span>
+     </div>
+     <div class="">
+       <span>0 XAF</span>
+     </div>
+
+   </div>
+   {% endif %}
+   <h3 class="fw-bold text-danger text-center my-4">Gerer votre panier</h3>
+   <div class="main">
+     {% for elt in typesArticlesPanier %}
+
+     <div class="mb-5">
+      {% with typeArticle=elt.typearticle %}
+      <div class="panier-content" id="{{typeArticle.pk}}">
+        <div class="row panier  p-1 rounded mx-1 justify-content-between "  >
+          <div class="col-12  col-md-2 col-lg-2" >
+            <div id="carousel-{{typeArticle.pk}}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+
+               <div class="carousel-inner">
+
+                 <div class="carousel-item active">
+                     <img src="{{typeArticle.photos.photo1.url}}" alt="{{typeArticle.article.nom}}" class="d-block m-auto">
+                 </div>
+                 <div class="carousel-item">
+                   <img src="{{typeArticle.photos.photo2.url}}"  alt="{{typeArticle.article.nom}}" class="d-block m-auto" alt="...">
+                 </div>
+                 {% if typeArticle.photos.photo3.url != None %}
+                 <div class="carousel-item">
+                   <img src="{{typeArticle.photos.photo3.url}}" alt="{{typeArticle.article.nom}}" class="d-block m-auto" alt="...">
+                 </div>
+                 {% endif %}
+               </div>
+               <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{typeArticle.pk}}" data-bs-slide="prev">
+               <i class="bi bi-chevron-left text-dark fs-3"></i>
+                 <span class="visually-hidden">Previous</span>
+               </button>
+               <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{typeArticle.pk}}" data-bs-slide="next">
+                 <i class="bi bi-chevron-right text-dark fs-3"></i>
+                 <span class="visually-hidden">Next</span>
+               </button>
+          </div>
+
+
+          </div>
+          <div class="col-12  col-md-2 col-lg-2 ">
+            <div class="d-flex flex-column justify-content-between">
+              <div class="">
+                <span class="fw-bold">{{typeArticle.article.nom}}</span>
+                <p>
+                  <a href="{{typeArticle.article.get_absolute_url}}" class="link-success">
+                     <span class="fw-bold">reference: </span> <span>{{typeArticle.article.id}}</span>
+                   </a>
+                </p>
+
+              </div>
+              <div class="">
+                <div class="">
+                   <span>Taille: </span><span class="text-dark fw-bold">{{typeArticle.taille}}</span>
+                </div>
+                <div class="">
+                  <span>Couleur: </span><span class="text-dark fw-bold">{{typeArticle.couleur}}</span>
+               </div>
+                </div>
+            </div>
+
+
+          </div>
+          <div class="col-12  col-md-2 col-lg-2 d-flex flex-column justify-content-between">
+
+            <span class="">Prix unitaire</span>
+            <p><span class="fw-bold text-danger">{{typeArticle.article.prix|floatformat:-3| formatprice}} XAF</span></p>
+
+          </div>
+          <div class="col-12  col-md-2 col-lg-2 d-flex flex-column justify-content-between quantite">
+            <span class="">Quantité</span>
+            <input type="number" name="" prix={{typeArticle.article.prix}} reference={{typeArticle.pk}} value="2" class="form-control" min="1" max="{{typeArticle.quantite_disponible}}">
+          </div>
+          <div class="col-12  col-md-2 col-lg-2 d-flex flex-column justify-content-between">
+            <span class="">Prix total</span>
+            <p><span class="fw-bold text-danger">{{typeArticle.article.prix|floatformat:-3|formatprice}} XAF</span></p>
+
+          </div>
+
+
+        </div>
+        <div class=" action-panier" style="cursor:pointer;">
+           <a href="#" class="text-decoration-none me-4 text-danger fw-bold d-block d-sm-inline">Valider la commande</a>
+           <a href="#" class="text-decoration-none text-info d-block d-sm-inline"  pk="{{typeArticle.pk}}">Supprimer la commande</a>
+        </div>
+      </div>
+
+
+
+       {% endwith %}
+       {% if forloop.last %}
+       <div class="d-flex my-5 commander">
+         <a href="#" class="btn btn-info rounded d-block mx-auto">Commander maintenant</a>
+       </div>
+       {% endif %}
+     </div>
+     {% empty %}
+     <div class="alert alert-info text-center my-3">
+       Votre panier est vide.
+     </div>
+      {% endfor %}
+   </div>
+
+
+
+
+
+ </div>
+
+
+
+{% endblock %}
+
+
+{% block footer %}
+  {% include "achat/footer.html" %}
+
+
+  <script src="{% static  'achat/js/jquery-3.6.0.js' %}"></script>
+  <script type="text/javascript" src="{% static 'achat/js/utils.js' %}"></script>
+  <script type="text/javascript" src="{% static 'achat/js/panier.js' %}">
+
+  </script>
+{% endblock %}

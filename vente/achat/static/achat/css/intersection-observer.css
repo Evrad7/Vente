@@ -1,0 +1,10 @@
+.hidden-tml{
+  opacity: 0;
+  transform: translateY(100px);
+
+}
+.visible-tml{
+  opacity:1;
+  transform: translateY(0px);
+  transition: all 1s 0s ease;
+}

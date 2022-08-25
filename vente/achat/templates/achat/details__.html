@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <title>Détails</title>
+    <link  href="css/style.css"  rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/navbar.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/details.css" type="text/css">
+    <link rel="stylesheet" href="css/content.css" type="text/css">
+    <link rel="stylesheet" href="css/intersection-observer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri&display=swap" rel="stylesheet"> 
+
+
+
+
+  </head>
+  <body>
+
+<div class="bg-light">
+  <div class="hidden-tml border-bottom border-dark container-fluid bg-warning pt-1 position-fixed" id="navbar" style="height:60px; top:0; z-index:99;">
+    <nav>
+
+      <div class="d-lg-flex justify-content-between ">
+        <div class="d-flex justify-content-between">
+          <div class="">
+            <a href="#" class=" fw-bold fs-6 text-uppercase text-decoration-none text-black">LUX</a>
+          </div>
+          <div class=" d-lg-none d-block  " style="margin-right:34px; margin-left:5px;">
+            <form class="search-sm" action="" method="get">
+              <div class="d-flex  position-relative">
+                <input type="search" name="search" value="" class="form-control pe-4" style="height:40px;">
+                <div class="btn-search d-inline">
+                  <i class="bi bi-x text-black fs-5  invisible" >     </i>
+                  <button type="submit" href="#" class="text-decoration-none text-danger fw-bold d-inline border-0 " ><i class="bi bi-search text-black fs-5" >  </i> <span class="d-none">Rechercher</span> </button>
+                </div>
+
+              </li>
+              </div>
+
+            </form>
+          </div>
+          <div class=" d-lg-none d-inline-block border border-dark d-flex justify-content-center align-items-center" id="button-nav" style="height:40px; width:40px; cursor:pointer;" >
+              <i class="bi bi-list fs-2 "></i>
+          </div>
+        </div>
+
+        <ul class=" desabled mt-4 mt-lg-0 d-lg-flex list-unstyled" style="overflow:hidden">
+          <li class="item me-5 mt-3 mt-lg-0">
+            <a class="text-decoration-none active text-danger fw-bold" href="acceuil.html">Acceuil</a>
+          </li>
+          <li class="item me-5 mt-3 mt-lg-0">
+            <a class="text-decoration-none text-danger fw-bold" href="cathegories.html">Cathegories</a>
+          </li>
+          <li class="item me-5 mt-3 mt-lg-0">
+            <a class="text-decoration-none text-danger fw-bold"  href="panier.html" >Panier <i class="bi bi-cart-fill"></i></a>
+          </li>
+          <li class="item me-5 mt-3 mt-lg-0">
+            <a class="text-decoration-none text-danger fw-bold" href="connexion.html" >Compte</a>
+          </li>
+
+          <li class="me pe-2 ms-3 d-none d-lg-block">
+          <form class="search" action="" method="get">
+            <div class="d-flex  position-relative">
+              <input type="search" name="search" value="" class="form-control pe-5" style="height:40px;">
+              <a href="#" class="text-decoration-none text-danger fw-bold d-inline invisible" >Rechercher</a>
+              <div class="btn-search d-inline">
+                <i class="bi bi-x text-black fs-5 invisible" >     </i>
+                <button type="submit" href="#" class="text-decoration-none text-danger fw-bold d-inline border-0 " >  Rechercher</button>
+              </div>
+
+            </li>
+        </ul>
+      </div>
+    </nav>
+
+  </div>
+
+   <div class="row  my-5 hidden-tml" >
+     <div class="col-0 col-sm-1 col-md-2 col-lg-3">
+
+     </div>
+     <div class="col-12 col-sm-10 col-md-8 col-lg-6 position-relative" style="background:#FFFFFF">
+       <a href="#" class="link-dark">
+         <div class="like  border border-danger rounded bg-light px-1 me-4">
+           <div class="d-flex justify-content-between ">
+             <i class="bi bi-heart d-block fs-2"></i>
+             <span class=" d-block mt-2">1002</span>
+           </div>
+         </div>
+       </a>
+
+       <div id="carousel" class="carousel slide m-auto" data-bs-ride="carousel" data-bs-interval="false" style="height:300px;">
+       <div class="carousel-inner " >
+         <div class="carousel-item active " >
+           <img src="img/basket-de-securite-souple-nitro-s3-rouge-noir-sparco.jpg" class="img-fluid d-block " alt="...">
+         </div>
+         <div class="carousel-item " >
+           <img src="img/chaussure_1.jpg" class="d-block " alt="..." >
+         </div>
+         <div class="carousel-item " >
+           <img src="img/tennis_5.jpg" class="d-block w-100" alt="...">
+         </div>
+       </div>
+       <button class="carousel-control-prev " type="button" data-bs-target="#carousel" data-bs-slide="prev">
+         <i class="bi bi-chevron-left text-dark fs-3"></i>
+         <span class="visually-hidden">Previous</span>
+       </button>
+       <button class="carousel-control-next " type="button" data-bs-target="#carousel" data-bs-slide="next">
+         <i class="bi bi-chevron-right text-dark fs-3"></i>
+         <span class="visually-hidden">Next</span>
+       </button>
+    </div>
+     </div>
+
+     <div class="col-0 col-sm-1 col-md-2 col-lg-3">
+
+     </div>
+
+
+
+
+   </div>
+
+   <div class="row mb-5 mx-sm-5 mx-1 hidden-tml">
+     <div class="col-12 col-lg-5 ">
+       <div class="d-sm-flex mb-1">
+         <span class="fw-bold me-3">prix</span>
+         <div class="">
+           <div class=" bg-warning   rounded-2 " style="height:30px; max-width:100px;">
+                <span class="">10 000XAF</span>
+           </div>
+           <span>-30%</span>
+           <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+         </div>
+
+       </div>
+       <div class="d-sm- mb-1">
+         <span class=" me-3">Nom du produit: </span>
+         <span class="text-danger fw-bold">Basket esparco</span>
+       </div>
+       <div class="d-sm-flex mb-1">
+         <span class=" me-3">Origine: </span>
+         <span class="text-danger fw-bold">Espagne</span>
+       </div>
+       <div class="d-sm-flex mb-1">
+         <span class=" me-3">Tailles disponibles: </span>
+         <span class="text-danger fw-bold">30, 32, 36, 42, 44</span>
+       </div>
+       <div class=" mb-1">
+         <span class=" me-3 fw-bold">Description: </span>
+         <p class=" ">Cette tennis fait à base de soie offre un confort et dure très longtemps
+                      Cette tennis fait à base de soie offre un confort et dure très
+                      Cette tennis fait à base de soie offre un confort et dure très longtemps
+            </p>
+       </div>
+       <div class="text-center d-block d-lg-none">
+         <svg xmlns="http://www.w3.org/2000/svg" width="250" height="1" viewBox="0 0 1257 1">
+          <line id="Ligne_7" data-name="Ligne 7" x2="1257" transform="translate(0 0.5)" fill="none" stroke="rgba(13,11,11,0.9)" stroke-width="1"/>
+        </svg>
+
+       </div>
+     </div>
+     <div class="col-0 col-lg-2 text-center d-none d-lg-block">
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="-1000" viewBox="0 0 90 1143.5">
+        <g id="Groupe_2" data-name="Groupe 2" transform="translate(-589 -284)">
+          <g id="Ellipse_3" data-name="Ellipse 3" transform="translate(589 284)" fill="#e2d9d6" stroke="#707070" stroke-width="1">
+            <circle cx="45" cy="45" r="45" stroke="none"/>
+            <circle cx="45" cy="45" r="44.5" fill="none"/>
+          </g>
+          <line id="Ligne_7" data-name="Ligne 7" y2="1053" transform="translate(634.5 374.5)" fill="none" stroke="rgba(13,11,11,0.9)" stroke-width="1"/>
+        </g>
+      </svg>
+
+
+
+     </div>
+     <div class="col-12 col-lg-5 ">
+        <div class="mb-1">
+          <span class="fw-bold">Livraison</span>
+          <p>Nous livrons dans toutes les villes du Cameroun. Nous avons toute une politique qui garantie la sécurité dans la livraison</p>
+        </div>
+      <div class="mb-1">
+        <span class="fw-bold"> Mode de payement</span>
+        <ul class="mode-payement text-danger">
+          <li>Mobile Money</li>
+          <li>Orange Money</li>
+          <li>Carte Bancaire</li>
+        </ul>
+      </div>
+      <div class="">
+          <a href="#" class="text-decoration-none ms-5">En savoir plus</a>
+      </div>
+     </div>
+   </div>
+
+  <div class=" text-center mb-4 hidden-tml">
+    <a type="button" href="#" class="btn btn-info rounded me-sm-3  mt-2">Ajouter  au  panier   </a>
+    <a type="button" href="#" class="btn btn-info rounded  mt-2">Acheter maintenant</a>
+  </div>
+
+  <div class="container mt-5 mb-5">
+      <div class="row">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml ">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/costume-veste-homme-deux-poitrine-simple-revers-cl(0).jpg" alt="veste" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Veste</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/tennis.jpg" alt="montre" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Tennis</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/robe-de-soiree-2019-evening-dresses-mermaid.jpg" alt="robe" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Robe de soirée Camerounaise</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/montre-homme-marque-de-luxe-bracelet-acier-chronog.jpg" alt="montre homme" class="card-img-top">
+            </div>
+
+            <div class="px-1  pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Montre homme</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/montre_1.jpg" alt="robe" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">montre</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/robe-de-soiree-femmes-robe-de-soiree-elegante-soir.jpg" alt="robe" class="card-img-top">
+            </div>
+
+            <div class="p-1 card-body">
+              <p class=" card-title p-0 m-0  text-center">Robe de soirée Camerounaise</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml ">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/costume-veste-homme-deux-poitrine-simple-revers-cl(0).jpg" alt="veste" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Veste</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/tennis.jpg" alt="montre" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Tennis</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/robe-de-soiree-2019-evening-dresses-mermaid.jpg" alt="robe" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Robe de soirée Camerounaise</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/montre-homme-marque-de-luxe-bracelet-acier-chronog.jpg" alt="montre homme" class="card-img-top">
+            </div>
+
+            <div class="px-1  pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Montre homme</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/montre_1.jpg" alt="robe" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">montre</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/robe-de-soiree-femmes-robe-de-soiree-elegante-soir.jpg" alt="robe" class="card-img-top">
+            </div>
+
+            <div class="p-1 card-body">
+              <p class=" card-title p-0 m-0  text-center">Robe de soirée Camerounaise</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml ">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/costume-veste-homme-deux-poitrine-simple-revers-cl(0).jpg" alt="veste" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Veste</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/tennis.jpg" alt="montre" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Tennis</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/robe-de-soiree-2019-evening-dresses-mermaid.jpg" alt="robe" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Robe de soirée Camerounaise</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/montre-homme-marque-de-luxe-bracelet-acier-chronog.jpg" alt="montre homme" class="card-img-top">
+            </div>
+
+            <div class="px-1  pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">Montre homme</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/montre_1.jpg" alt="robe" class="card-img-top">
+            </div>
+
+            <div class="px-1 pb-0 card-body">
+              <p class=" card-title p-0 m-0  text-center">montre</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2 hidden-tml">
+          <div class="card position-relative p-0 border border-warning shadow">
+            <div class="content-img">
+              <img src="img/robe-de-soiree-femmes-robe-de-soiree-elegante-soir.jpg" alt="robe" class="card-img-top">
+            </div>
+
+            <div class="p-1 card-body">
+              <p class=" card-title p-0 m-0  text-center">Robe de soirée Camerounaise</p>
+               <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                    <span class="">10 000XAF</span>
+               </div>
+
+               <div class=" d-flex justify-content-center">
+                 <span style="" class=" text-dark fw-bold rounded reduction">-30%</span>
+                 <span class="text-muted   text-decoration-line-through">15 000 XAF</span>
+               </div>
+                <a href="details.html" class="stretched-link"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="service hidden-tml mb-4 container">
+    <div class="row container">
+      <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center flex-column">
+          <img src="img/service-client.png" alt="service-client" class=" border">
+          <span class="text-danger fw-bold text-center">Service Client</span>
+          <p class="text-center">Nous somme disponble <span class="text-danger ">7j/7 24h/24</span> </p>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center flex-column">
+          <img src="img/satisfait-remboursé.png" alt="satisfait-rembourse" class=" border">
+          <span class="text-danger fw-bold text-center">Satisfait remboursé</span>
+          <p class="text-center"> A la reception de vos articles vous avez la possibilité d'être  <span class="text-danger ">remboursé</span> </p>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center flex-column">
+          <img src="img/livraison-expresse.png" alt="Livraison Expresse" class=" border">
+          <span class="text-danger fw-bold text-center">Livraison Expresse</span>
+          <p class="text-center">Livraison rapide dans moins de  <span class="text-danger ">12 h</span> </p>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center flex-column">
+          <img src="img/payement-rapide.png" alt="payement rapide" class=" border">
+          <span class="text-danger fw-bold text-center"> Payement sécurisé et rapide</span>
+          <p class="text-center">Payez de maniere <span class="text-danger ">3X</span> plus rapide et sécurisée.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hidden-tml footer bg-dark container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-4 text-center">
+         <h3 class="mb-3 text-danger">Contactez nous</h3>
+
+         <div class="mb-2">
+           <a class="link-light" href="#">Whatsapp</a> <i class="bi bi-whatsapp text-light"></i>
+         </div>
+         <div class="mb-2">
+           <a class="link-light" href="#">Facebook</a> <i class=" bi bi-facebook text-light"></i>
+         </div>
+         <div class="mb-2">
+           <a class="link-light" href="#">Twitter</a> <i class="bi bi-twitter text-light"></i>
+         </div>
+         <div class="mb-2">
+           <a class="link-light" href="#">Instagram</a> <i class="bi bi-instagram text-light"></i>
+         </div>
+         <div class="mb-2">
+           <a class="link-light" href="#">Mail</a> <i class="bi bi-envelope text-light"></i>
+         </div>
+      </div>
+
+      <div class="col-12 col-sm-4 text-center">
+        <h3 class="mb-3 text-danger">Partenaires</h3>
+        <div class="mb-2">
+          <a class="link-light" href="#">Amazon</a>
+        </div>
+        <div class="mb-2">
+          <a class="link-light" href="#">Maison de Luxe</a>
+        </div>
+
+        <div class="mb-2">
+          <a class="link-light" href="#">Industrie Textile CICAM</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 text-center">
+        <h3 class="mb-3 text-danger">Localisaiton</h3>
+        <div class="mb-2">
+          <a href="#" class="link-light">Yaoundé/Cameroun</a>
+        </div>
+
+        <h3 class="mb-3 text-danger">Application mobile</h3>
+        <div class="mb-2">
+         <a class="link-light" href="#">Télécharger notre application mobile ici.</a>
+        </div>
+
+      </div>
+    </div>
+    <div class="text-center pb-2">
+      <span class="text-light">Copyright TML @2022</span>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript"  src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js">
+
+  </script>
+  <script type="text/javascript" src="js/navbar.js">
+
+  </script>
+  <script type="text/javascript" src="js/intersection-observer.js">
+
+  </script>
+
+  </body>

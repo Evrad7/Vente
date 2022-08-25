@@ -1,0 +1,91 @@
+{% extends "achat/base.html"  %}
+{% load static %}
+{% load format_price %}
+
+    {% block header %}
+    <title>Cathégories</title>
+    <link rel="stylesheet" href="{% static 'achat/css/cathegories.css' %}" type="text/css">
+
+    {% endblock %}
+
+
+    {% block content %}
+     {% include "achat/menu.html" with page=2 %}
+
+     <div class="bg-light">
+       <div class="container-fluid" style="margin-top:65px;">
+         <div class="row cathegories">
+           <div class="col-4 col-sm-3 col-md-2 col-lg-1 mt-2" pk="none">
+             <a href="#" class="text-decoration-none link-dark">
+
+               <img src="{% static 'achat/img/tout.jpg' %}" alt="{{cathegorie.nom}}" class=" border border-danger d-block">
+               <p class="">Tout</p>
+             </a>
+
+           </div>
+           {% for cathegorie in cathegories %}
+           <div class="col-4 col-sm-3 col-md-2 col-lg-1 mt-2" pk={{cathegorie.pk}}>
+             <a href="#" class="text-decoration-none link-dark">
+
+               <img src="{{cathegorie.photo.url}}" alt="{{cathegorie.nom}}" class=" border border-danger d-block">
+               <p class="">{{cathegorie.nom}}</p>
+             </a>
+
+           </div>
+           {% endfor %}
+
+         </div>
+       </div>
+       <div class="container mt-5 mb-5">
+         <h5 class="fw-bold cathegorie-active">{% if search %} Recherche "<span class="text-danger">{{search}}</span>" {% else %} Toutes les chathégories{% endif %} </h5>
+         <div class="row articles">
+          {% for article in articles %}
+           <div class="col-6 col-sm-4 col-md-3 col-lg-2  mb-2  ">
+             <div class="card position-relative p-0 border border-warning shadow">
+               <div class="content-img">
+                 <img src="{{article.photo.url}}" alt="{{article.nom}}" class="card-img-top" width="154px" height="154px">
+               </div>
+
+               <div class="px-1 pb-0 card-body">
+                 <p class=" card-title p-0 m-0  text-center">{{article.nom}}</p>
+                  <div class="  mx-auto btn-price d-flex justify-content-center align-items-center bg-warning py-0  rounded-2 " style="height:30px;">
+                       <span class="">{{article.prix|floatformat:-3|formatprice}} XAF</span>
+                  </div>
+
+                  <div class=" d-flex justify-content-center">
+                    <span style="" class=" text-dark fw-bold rounded reduction">-{{article.reduction}}%</span>
+                    <span class="text-muted   text-decoration-line-through">{{article.prix_non_reduit|floatformat:-3|formatprice}} XAF</span>
+                  </div>
+                   <a href="{{article.get_absolute_url}}" class="stretched-link"></a>
+               </div>
+             </div>
+           </div>
+
+
+          {% endfor %}
+         </div>
+       </div>
+
+     </div>
+
+     {% endblock %}
+
+
+
+
+ {% block footer %}
+ {% include "achat/footer.html" %}
+ <script src="{% static  'achat/js/jquery-3.6.0.js' %}"></script>
+ <script type="text/javascript" src="{% static 'achat/js/utils.js' %}">
+
+ </script>
+
+<script type="text/javascript" src="{% static 'achat/js/articles_ajax.js' %}">
+
+</script>
+<script type="text/javascript" src="{% static 'achat/js/cathegories.js' %}">
+
+</script>
+
+
+ {% endblock %}

@@ -1,0 +1,81 @@
+{% load static %}
+
+<div class="service hidden-tml mb-4 container {% if service == 1 %} d-none {% endif %}">
+  <div class="row container">
+    <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center flex-column">
+        <img src="{% static  'achat/img/service-client.png' %}" alt="service-client" class=" border">
+        <span class="text-danger fw-bold text-center">Service Client</span>
+        <p class="text-center">Nous somme disponble <span class="text-danger ">7j/7 24h/24</span> </p>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center flex-column">
+        <img src="{% static  'achat/img/satisfait-remboursé.png' %}" alt="satisfait-rembourse" class=" border">
+        <span class="text-danger fw-bold text-center">Satisfait remboursé</span>
+        <p class="text-center"> A la reception de vos articles vous avez la possibilité d'être  <span class="text-danger ">remboursé</span> </p>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center flex-column">
+        <img src="{% static  'achat/img/livraison-expresse.png'  %}" alt="Livraison Expresse" class=" border">
+        <span class="text-danger fw-bold text-center">Livraison Expresse</span>
+        <p class="text-center">Livraison rapide dans moins de  <span class="text-danger ">12 h</span> </p>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center align-items-center flex-column">
+        <img src="{% static  'achat/img/payement-rapide.png' %}" alt="payement rapide" class=" border">
+        <span class="text-danger fw-bold text-center"> Payement sécurisé et rapide</span>
+        <p class="text-center">Payez de maniere <span class="text-danger ">3X</span> plus rapide et sécurisée.</p>
+    </div>
+
+  </div>
+</div>
+<div class="hidden-tml footer bg-dark container-fluid">
+
+  <div class="row">
+    <div class="col-12 col-sm-4 text-center">
+       <h3 class="mb-3 text-danger">Contactez nous</h3>
+
+       <div class="mb-2">
+         <a class="link-light" href="#">Whatsapp</a> <i class="bi bi-whatsapp text-light"></i>
+       </div>
+       <div class="mb-2">
+         <a class="link-light" href="#">Facebook</a> <i class=" bi bi-facebook text-light"></i>
+       </div>
+       <div class="mb-2">
+         <a class="link-light" href="#">Twitter</a> <i class="bi bi-twitter text-light"></i>
+       </div>
+       <div class="mb-2">
+         <a class="link-light" href="#">Instagram</a> <i class="bi bi-instagram text-light"></i>
+       </div>
+       <div class="mb-2">
+         <a class="link-light" href="#">Mail</a> <i class="bi bi-envelope text-light"></i>
+       </div>
+    </div>
+
+    <div class="col-12 col-sm-4 text-center">
+      <h3 class="mb-3 text-danger">Partenaires</h3>
+      <div class="mb-2">
+        <a class="link-light" href="#">Amazon</a>
+      </div>
+      <div class="mb-2">
+        <a class="link-light" href="#">Maison de Luxe</a>
+      </div>
+
+      <div class="mb-2">
+        <a class="link-light" href="#">Industrie Textile CICAM</a>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-4 text-center">
+      <h3 class="mb-3 text-danger">Localisaiton</h3>
+      <div class="mb-2">
+        <a href="#" class="link-light">Yaoundé/Cameroun</a>
+      </div>
+
+      <h3 class="mb-3 text-danger">Application mobile</h3>
+      <div class="mb-2">
+       <a class="link-light" href="#">Télécharger notre application mobile ici.</a>
+      </div>
+
+    </div>
+  </div>
+  <div class="text-center pb-2">
+    <span class="text-light">Copyright TML @2022</span>
+  </div>
+</div>

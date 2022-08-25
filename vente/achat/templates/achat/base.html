@@ -1,0 +1,56 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+
+    <link  href="{% static  'achat/css/style.css' %}"  rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'achat/css/intersection-observer.css' %}"  type="text/css">
+
+    <link rel="stylesheet" href="{% static  'achat/css/navbar.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="{% static  'achat/css/bootstrap-icons.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="{% static  'achat/css/content.css' %}" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri&display=swap" rel="stylesheet">
+  {% block header %}
+
+  {% endblock %}
+
+
+  </head>
+  <body class="bg-light">
+
+
+
+   {% block content %}
+   {% endblock %}
+
+
+
+
+   {% block footer %}
+   {% endblock %}
+
+
+
+
+
+    <script type="text/javascript"  src="{% static  'achat/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}">
+    </script>
+    <script type="text/javascript" src="{% static  'achat/js/navbar.js' %}">
+    </script>
+    <script type="text/javascript" src="{% static  'achat/js/intersection-observer.js' %}">
+    </script>
+    <script type="text/javascript" src="{% static 'achat/js/navbar_ajax.js' %}">
+    </script>
+  </body>
+</html>

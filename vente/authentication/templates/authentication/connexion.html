@@ -1,0 +1,70 @@
+{% extends "achat/base.html" %}
+{% load static %}
+
+{% block header %}
+<title>Connexion</title>
+{% include "achat/menu.html" with page=4 %}
+<link rel="stylesheet" href="{% static 'achat/css/connexion.css' %}" type="text/css">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+  <div class="" style="min-height:100vh;">
+
+
+        <div class="row connexion" style="" >
+          <div class="col-12 col-md-6 d-flex justify-content-center   align-items-center">
+            <div class="">
+              <form class="" action="" method="post">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <input type="text" name="{{form.username.html_name}}" value="" class="form-control  rounded" placeholder="nom utilisateur " required>
+                </div>
+
+                <div class="">
+                  <input type="password" name="{{form.password.html_name}}" value="" class="form-control rounded" placeholder="mot de passe" required>
+                  <div class="text-end">
+                    <a href="#" class="text-decoration-none link-info text-end"><i>mot de passe oublié ??</i></a>
+                  </div>
+                </div>
+                {% if form.errors %}
+                <div class="text-info pt-1">
+                  <i>Veuillez entrer un nom utilisateur et un mot de passe valide. <br>
+                  Le mot de passe peut être sensible à la casse.</i>
+                </div>
+                {% endif %}
+
+
+                <div class="mt-5 text-center">
+                  <input type="submit" name="" value="Connecter" class="btn btn-info rounded shadow fw-bold ">
+                </div>
+
+
+              </form>
+              <div class="mt-2">
+                <p>
+                Vous êtes nouveau chez <i>Lux</i>?? <a href="{% url 'auth:inscription' %}" class="link-danger">Inscrivez vous</a> </p>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-0 col-md-6 decor d-none d-md-block" >
+              <div class="">
+                 <p class="display-5 text-dark fw-bold ">Faite nous confiance et renouvelez votre garde robe à des prix imbattables</p>
+              </div>
+          </div>
+
+        </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+{% include "achat/footer.html" with service=1 %}
+{% endblock %}

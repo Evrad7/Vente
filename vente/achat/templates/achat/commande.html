@@ -1,0 +1,103 @@
+{% extends "achat/base.html" %}
+{% load static %}
+{% load format_price %}
+
+{% block header %}
+<title>Connexion</title>
+{% include "achat/menu.html" with page=3 %}
+<link rel="stylesheet" href="{% static 'achat/css/connexion.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'achat/css/commande.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+  <div class="" style="min-height:100vh;">
+
+
+        <div class="row compte" style="" >
+          <div class="col-12 col-md-6 " style="margin-top:100px">
+            {% if commande_nulle %}
+              <div class="alert alert-info text-center">
+                Votre commande ne comporte aucun article
+              </div>
+            {% else %}
+            <div class="ps-4 border-start border-4 border-warning">
+              <h3 class="mb-5">Finalisez l'achat</h3>
+              <div class="fs-5 mb-2">
+                <span>Prix Total TT</span>: <span class="fw-bold text-danger">{{prix_total|floatformat:-3|formatprice}} XAF</span>
+              </div>
+              <div class="my-5">
+                <h5>Selectionner la destination </h5>
+                  <div class="d-flex destination ">
+                    <div class="me-2 mt-3">
+                      {{form.pays.label_tag}}
+                      {{form.pays}}
+                    </div>
+                    <div class="me-2 mt-3">
+                      {{form.region.label_tag}}
+                      {{form.region}}
+                    </div>
+                    <div class="me-2 mt-3">
+                      {{form.ville.label_tag}}
+                      {{form.ville}}
+                    </div>
+                    <div class="me-2 mt-3">
+                      {{form.quartier.label_tag}}
+                      {{form.quartier}}
+                    </div>
+                    <div class="me-2 mt-3">
+                      {{form.adresse.label_tag}}
+                      {{form.adresse}}
+                    </div>
+                  </div>
+              </div>
+              <div class="mt-5">
+                <a href="#" class="link-info text-decoration-none">Renseignez les informations de la facture ici.</a>
+              </div>
+              <div class="mt-2">
+                <h5>Selectionner votre moyen de payement.</h5>
+                <div class="">
+                  <select class="form-control" name="paiement">
+                    <option value="livraison" selected>Paiement à la livraison</option>
+                    <option value="mtn">Paiement par MTN MOMO(reduction:5%)</option>
+                    <option value="orange">Paiement par Orange MOMO(reduction:5%)</option>
+                    <option value="paypal">Paiement par paypal(reduction:5%)</option>
+                    <option value="spring">Paiement par Spring(reduction:5%)</option>
+
+                  </select>
+                </div>
+              </div>
+              <div class="mt-5 text-center">
+                <input type="submit" name="" value="Payer maintenant " class="btn btn-info mb-3">
+              </div>
+            </div>
+            {% endif %}
+
+          </div>
+
+
+
+          <div class="col-0 col-md-6 decor d-none d-md-block" >
+              <div class="">
+                 <p class="display-5 text-dark fw-bold ">Faite nous confiance et renouvelez votre garde robe à des prix imbattables</p>
+              </div>
+          </div>
+
+        </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+{% include "achat/footer.html" with service=1 %}
+
+<script type="text/javascript" src="{% static 'achat/js/utils.js' %}"></script>
+<script type="text/javascript" src="{% static 'achat/js/commande.js' %}"></script>
+
+
+{% endblock %}

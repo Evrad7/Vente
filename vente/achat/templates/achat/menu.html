@@ -1,0 +1,69 @@
+<div class=" border-bottom border-dark container-fluid bg-warning pt-1 position-fixed" id="navbar" style="height:60px; top:0; z-index:99;">
+  <nav>
+
+    <div class="d-lg-flex justify-content-between ">
+      <div class="d-flex justify-content-between">
+        <div class="">
+          <a href="#" class=" fw-bold  text-uppercase text-decoration-none text-black ">LUX</a>
+        </div>
+        <div class=" d-lg-none d-block  " style="margin-right:34px; margin-left:5px;">
+          <form class="search-sm" action="{% url 'achat:cathegories' %}" method="get">
+            <div class="d-flex  position-relative">
+              <input type="search" name="search" value="{% if search %} {{search}} {% endif %}" class="form-control pe-4 search-navbar" style="height:40px;">
+              <div class="">
+
+              </div>
+              <div class="btn-search d-inline">
+                <i class="bi bi-x text-black fs-5  invisible" >     </i>
+                <button type="submit" href="#" class="text-decoration-none text-danger fw-bold d-inline border-0 " ><i class="bi bi-search text-black fs-5" >  </i> <span class="d-none">Rechercher</span> </button>
+              </div>
+              <div class="proposition-search shadow border border-success rounded">
+
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class=" d-lg-none d-inline-block border border-dark d-flex justify-content-center align-items-center" id="button-nav" style="height:40px; width:40px; cursor:pointer;" >
+            <i class="bi bi-list fs-2 "></i>
+        </div>
+      </div>
+
+      <ul class=" desabled mt-4 mt-lg-0 d-lg-flex list-unstyled" style="">
+        <li class="item me-5 mt-3 mt-lg-0">
+
+          <a class="text-decoration-none {% if  page is 1 %} active {% endif %} text-danger fw-bold" href="{% url 'achat:acceuil' %}">Acceuil</a>
+
+        </li>
+        <li class="item me-5 mt-3 mt-lg-0">
+          <a class="text-decoration-none text-danger fw-bold {% if  page is 2 %} active {% endif %}" href="{% url 'achat:cathegories' %}">Cathegories</a>
+        </li>
+        <li class="item me-5 mt-3 mt-lg-0">
+          <a class="text-decoration-none text-danger fw-bold {% if  page is 3 %} active {% endif %}"  href="{% url 'achat:panier' %}" >Panier <i class="bi bi-cart-fill"></i> </a>
+        </li>
+        <li class="item me-5 mt-3 mt-lg-0">
+          <a class="text-decoration-none text-danger fw-bold {% if  page is 4 %} active {% endif %}" href="{% url 'auth:compte' %}" >Compte</a>
+        </li>
+
+        <li class="me pe-2 ms-3 d-none d-lg-block ">
+        <form class="search" action="{% url 'achat:cathegories' %}" method="get">
+          <div class="d-flex position-relative  ">
+            <input id="" type="search" name="search" value="{% if search %} {{search}} {% endif %}" class="form-control pe-5 search-navbar" style="height:40px;">
+            <a href="#" class="text-decoration-none text-danger fw-bold d-inline invisible" >Rechercher</a>
+            <div class="btn-search d-inline">
+              <i class="bi bi-x text-black fs-5 invisible" >     </i>
+              <button type="submit" href="#" class="text-decoration-none text-danger fw-bold d-inline border-0 " >  Rechercher</button>
+            </div>
+
+            <div class="proposition-search shadow border border-success rounded ">
+
+            </div>
+          </div>
+        </form>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+</div>

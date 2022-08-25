@@ -1,0 +1,68 @@
+{% extends "achat/base.html" %}
+{% load static %}
+
+{% block header %}
+<title>Connexion</title>
+{% include "achat/menu.html" with page=4 %}
+<link rel="stylesheet" href="{% static 'achat/css/connexion.css' %}" type="text/css">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+  <div class="" style="min-height:100vh;">
+
+
+        <div class="row compte" style="" >
+          <div class="col-12 col-md-6 " style="margin-top:100px">
+            <h4 class="mb-4">Modification des informations personnelles de votre compte</h4>
+            <div class="error"></div>
+            <div class="mx-md-4">
+              <form class="" action="" method="post" id="form">
+                {% csrf_token %}
+                <div class="mb-4">
+                    {{form.username.label_tag}}
+                    <input type="text" name="{{form.username.html_name}}" value="{{form.username.value}}" class="form-control  rounded"  required id="{{form.username.id_for_label}}">
+                    <i class="error-username text-danger"></i>
+                </div>
+                <div class="mb-4">
+                    {{form.email.label_tag}}
+                    <input type="text" name="{{form.email.html_name}}" value="{{form.email.value}}" class="form-control  rounded"  required id="{{form.email.id_for_label}}">
+                    <i class="error-email text-danger"></i>
+                </div>
+              </form>
+
+              <div class="modification">
+                <h4>Gestion mot de passe</h4>
+                <ul  style="list-style-type:none;" class="mt-2">
+                  <li>  <a href="#" class="link-dark fs-6 text-decoration-none">Modification du mot de passe</a></li>
+                  <li>  <a href="#" class="link-dark fs-6 text-decoration-none">Renitialisation mot de passe</a></li>
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+
+
+
+          <div class="col-0 col-md-6 decor d-none d-md-block" >
+              <div class="">
+                 <p class="display-5 text-dark fw-bold ">Faite nous confiance et renouvelez votre garde robe à des prix imbattables</p>
+              </div>
+          </div>
+
+        </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+{% include "achat/footer.html" with service=1 %}
+<script src="{% static  'achat/js/jquery-3.6.0.js' %}"></script>
+<script src="{% static  'authentication/js/compte-modification.js' %}"></script>
+{% endblock %}

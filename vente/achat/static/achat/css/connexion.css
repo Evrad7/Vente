@@ -1,0 +1,62 @@
+
+
+@media all and (min-width:490px) {
+  form div input[type="text"]{
+    min-width:380px;
+  }
+}
+
+
+.decor {
+  background-image: url("../img/tout.jpg");
+ height:100vh;
+  background-size: cover;
+  background-position: center;
+  position:relative;
+}
+
+.decor div{
+  position: absolute;
+  top:30%;
+  left:5%;
+}
+.decor div p{
+  text-shadow: 3px 3px 5px black;
+}
+
+
+@media all and (min-width:490px) {
+  form div input[type="text"]{
+    min-width:380px;
+  }
+}
+
+
+.decor {
+  background-image: url("../img/tout.jpg");
+ height:100vh;
+  background-size: cover;
+  background-position: center;
+  position:relative;
+}
+
+.decor div{
+  position: absolute;
+  top:30%;
+  left:5%;
+}
+.decor div p{
+  text-shadow: 3px 3px 5px black;
+}
+
+
+@media all and (max-width:768px) {
+  .connexion{
+    margin-top:200px;
+  }
+}
+
+
+.compte div ul li a:hover, .modification a:hover{
+  color:#693d2e;
+}

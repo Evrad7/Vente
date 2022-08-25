@@ -1,0 +1,113 @@
+
+
+
+ul.mode-payement{
+  list-style: none;
+}
+
+.like{
+  width:75px;
+  height:40px;
+  position: absolute;
+  bottom:25px;
+  right:0;
+  z-index: 20;
+
+}
+
+.dropdown-toggle::after{
+  display:none;
+}
+.dropdown button.dropdown-toggle i:before{
+  transition: .5s   cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.dropdown button.dropdown-toggle i.active:before{
+  transform:rotate(-180deg);
+
+
+}
+.dropdown button.dropdown-toggle i{
+  position:absolute;
+  right:10px;
+  top:50;
+}
+
+
+ul.tailles li:hover{
+  cursor:pointer;
+}
+
+.carousel-inner .carousel-item img{
+  transition: all .5s ease;
+}
+#dropdownMenu2{
+  min-width: 150px;
+}
+
+ul.tailles div.position-relative div{
+  display: none;
+}
+
+ul.tailles div   li.active{
+  background: pink;
+}
+ul.tailles div   li.active~div{
+  z-index: 99;
+  position: absolute;
+  transform: translate(0%, 30%);
+  display: inline;
+  background: pink;
+
+
+}
+ul.tailles div   li.active~div span a{
+  font-size: 12px;
+}
+ul.tailles div   li.active~div span:before{
+  content:"";
+  width:8px;
+  height:8px;
+  position:absolute;
+  background: pink;
+  top:-6px;
+  left:11px;
+  transform:rotate(45deg);
+}
+
+ul.tailles div   li.active~div span{
+  white-space:nowrap;
+  text-overflow: ellipsis;
+}
+
+#load-ajax{
+  transition: all .5s ease;
+}
+
+.load-card-img{
+   width:100px;
+   height:90%;
+   background:red;
+}
+
+.block-info  div{
+  position:fixed;
+  top:10px;
+  right:10px;
+  z-index: 100;
+  animation-name: slideDown;
+  animation-duration: .5s;
+  animation-delay: 0s;
+  animation-fill-mode:forwards;
+
+  animation-timing-function: cubic-bezier(.68,-0.55,.27,1.55);
+
+}
+@keyframes slideDown {
+  from{
+    top:10px;
+  }
+  to{
+    top:150px;
+  }
+}

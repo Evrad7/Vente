@@ -1,0 +1,70 @@
+{% extends "achat/base.html" %}
+{% load static %}
+
+{% block header %}
+<title>Connexion</title>
+{% include "achat/menu.html" with page=4 %}
+<link rel="stylesheet" href="{% static 'achat/css/connexion.css' %}" type="text/css">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+  <div class="" style="min-height:100vh;">
+
+
+        <div class="row connexion" style="" >
+          <div class="col-12 col-md-6 d-flex justify-content-center   align-items-center">
+            <div class="">
+              <form class="" action="" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-4">
+                    {{field}}
+                    <ul style="list-style-type:none" class="">
+                      {% for error in field.errors %}
+                      <li class="" style="max-width:387px;">  <i class="text-danger d-block">{{error}}</i></li>
+                      {% endfor %}
+                    </ul>
+                </div>
+
+                {% endfor %}
+
+
+                {% if error %}
+                <div class="text-info pt-1">
+                  <i>{{error}}</i>
+                </div>
+                {% endif %}
+
+                <div class="mt-5 text-center">
+                  <input type="submit" name="" value="Inscrire" class="btn btn-info rounded shadow fw-bold ">
+                </div>
+
+              </form>
+              <div class="mt-2">
+                <p>
+                Vous avez déja un compte ici chez <i>Lux</i>?? <a href="{% url 'auth:connexion' %}" class="link-danger">Connectez vous</a> </p>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-0 col-md-6 decor d-none d-md-block" >
+              <div class="">
+                 <p class="display-5 text-dark fw-bold ">Faite nous confiance et renouvelez votre garde robe à des prix imbattables</p>
+              </div>
+          </div>
+
+        </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+{% include "achat/footer.html" with service=1 %}
+{% endblock %}

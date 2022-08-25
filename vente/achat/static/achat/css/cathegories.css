@@ -1,0 +1,51 @@
+
+
+.cathegories img{
+width:75px;
+height: 75px;
+border-radius: 40%;
+}
+
+.cathegories p{
+  font-size: 12px;
+
+}
+
+.cathegories{
+  cursor:pointer;
+}
+
+@media all and (max-width:250px) {
+  .cathegories img{
+    width:40px;
+    height:40px;
+  }
+  .cathegories p{
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+}
+
+.cathegories div:hover{
+  transform: translateY(10px);
+}
+.cathegories div{
+  transition: .5s cubic-bezier(.18,.89,.32,1.28);
+}
+.cathegories div.active img{
+ border-width: 20px;
+  background-color:  #E2D9D6;
+}
+
+.button-to-top{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  z-index:20;
+}

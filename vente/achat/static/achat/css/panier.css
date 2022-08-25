@@ -1,0 +1,31 @@
+
+
+.panier img{
+  height:100px;
+  width:100px;
+}
+.panier{
+  background: white;
+
+}
+
+div.panier.active{
+  border: 3px solid green;
+}
+
+div.panier{
+  border: .5px solid black;
+}
+
+.informations  div{
+  border: 1px solid black;
+  border-radius: 50%;
+
+}
+.prix-total{
+  position:fixed;
+  top:100px;
+  right:10px;
+  max-width:200px;
+  z-index:98;
+}
