@@ -7,7 +7,7 @@ from destination.models import *
 class DestinationForm(forms.Form):
     default=1
 
-    def getChoicesPays(tml):
+    def getChoicesPays():
         choices=[]
         for _ in Pays.objects.all():
             choices.append((_.id,_.nom))
@@ -42,7 +42,7 @@ class DestinationForm(forms.Form):
 
 
 
-    pays=forms.ChoiceField(choices=getChoicesPays("tml"), initial="Cameroun", widget=forms.Select(attrs={"class":"form-control"}))
+    pays=forms.ChoiceField(choices=getChoicesPays, initial="Cameroun", widget=forms.Select(attrs={"class":"form-control"}))
     region=forms.ChoiceField(choices=getChoicesRegion, widget=forms.Select(attrs={"class":"form-control"}))
     ville=forms.ChoiceField(choices=getChoicesVille, widget=forms.Select(attrs={"class":"form-control"}))
     quartier=forms.ChoiceField(choices=getChoicesQuartier, widget=forms.Select(attrs={"class":"form-control"}))

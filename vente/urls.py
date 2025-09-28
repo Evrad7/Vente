@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("__debug__/", include("debug_toolbar.urls")),
     path("gestion/", include(("gestion.urls", "gestion"))),
-    path("achat/", include(("achat.urls", "achat"))),
+    path("", include(("achat.urls", "achat"))),
     path("auth/", include(("authentication.urls", "auth"))),
 
 

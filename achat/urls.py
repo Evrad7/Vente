@@ -5,7 +5,7 @@ panier, ajoutPanier, commanderAjax, commande, supprimerArticlePanierAjax, destin
 
 
 urlpatterns=[
- path("acceuil/", acceuil, name="acceuil"),
+ path("", acceuil, name="acceuil"),
  path("articles/ajax/", articlesAjax, name="articles_ajax"),
  path("details/<int:pk>/", details, name="details"),
  path("details/<int:pk>/ajax/", detailsAjax, name="details_ajax"),
