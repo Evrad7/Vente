@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 var searchAjax=function(item){
   var request=$.ajax({
-    url:"/achat/search_ajax?q="+item.val(),
+    url:"/search_ajax?q="+item.val(),
     method:"GET",
     asynch:true,
     cache:false,

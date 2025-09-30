@@ -1,5 +1,7 @@
 
-
+body {
+  overflow-x: hidden;
+}
 nav ul li.item a:after, .footer div a:after{
   content:'';
   width:0%;

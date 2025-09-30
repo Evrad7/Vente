@@ -14,7 +14,7 @@
 {% include "achat/menu.html" with page=3 %}
 
  <div class=" container position-relative " style="margin-top:60px;">
-   {% if  not typesArticlesPanier|length_is:"0"%}
+   {% if  not typesArticlesPanier|length %}
    <div class="prix-total bg-warning px-1 rounded">
      <div class="">
        <span>Prix Total:</span>

@@ -70,7 +70,7 @@ prepareAjaxSelectionCouleur=function(){
 ajaxChargementDePhotos=function(old_pk_photos, new_pk_photos){
    if(old_pk_photos!=new_pk_photos){
      var request1=$.ajax({
-       url:"/achat/details/charger_images/?q="+new_pk_photos,
+       url:"/details/charger_images/?q="+new_pk_photos,
     		type:"GET",
     		processData:false,
     		contentType:false,

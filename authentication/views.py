@@ -68,3 +68,4 @@ def compteModification(request):
 @login_required()
 def compte(request):
     return render(request, "authentication/compte.html", locals())
+

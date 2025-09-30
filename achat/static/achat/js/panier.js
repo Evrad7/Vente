@@ -80,8 +80,8 @@ var commandeAjax=function(){
         console.log("ERROR")
       }
       else{
-        console.log("SUCCESS")
-        $(location).attr("pathname", "/achat/commande")
+        // console.log("SUCCESS")
+        $(location).attr("pathname", "/commande")
       }
     })
 
@@ -92,7 +92,7 @@ var commandeAjax=function(){
 }
 var supprimerArticlePanierAjax=function(pk){
   var request=$.ajax({
-    url:"/achat/panier/supprimer_article_panier_ajax?pk="+pk,
+    url:"/panier/supprimer_article_panier_ajax?pk="+pk,
     method:"GET",
     asynch:true,
     cache:false,

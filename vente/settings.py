@@ -132,8 +132,8 @@ MEDIA_URL="/media/"
 MEDIA_ROOT="/media/"
 LOGIN_URL="/auth/connexion/"
 
-LOGIN_REDIRECT_URL="/achat/acceuil/"
-LOGOUT_REDIRECT_URL="/achat/acceuil/"
+LOGIN_REDIRECT_URL="/"
+LOGOUT_REDIRECT_URL="/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

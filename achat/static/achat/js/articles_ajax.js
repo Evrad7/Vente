@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 var filtreCathegoriesAjax=function(item){
   var request=$.ajax({
-  url:"/achat/articles/ajax/?q="+item.attr("pk"),
+  url:"/articles/ajax/?q="+item.attr("pk"),
   method:"GET",
   processData:false,
   contentType:false,
@@ -67,7 +67,7 @@ request.done(function(response){
                   <span style='' class='text-dark fw-bold rounded reduction'>-"+object.reduction+"%</span>\
                   <span class='text-muted   text-decoration-line-through'>"+floatformat(object.prix_non_reduit)+" XAF</span>\
                 </div>\
-                 <a href='/achat/details/"+object.pk+"/' class='stretched-link'></a>\
+                 <a href='/details/"+object.pk+"/' class='stretched-link'></a>\
              </div>\
            </div>\
          </div>")
